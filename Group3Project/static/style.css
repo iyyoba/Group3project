@@ -1,0 +1,74 @@
+body {
+    background-color: beige;
+
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    color: black;
+    font-size: 40px;
+
+}
+h2{
+    color: burlywood;
+    font-size: xx-large;
+}
+th{
+    font-size: 20px;
+    color: black;
+
+}
+
+form {
+    text-align: center;
+}
+
+.signup{
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
+p{
+    padding-top: 0px;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#info-content {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#info-list {
+    list-style: none;
+}
+
+#info-list li {
+    margin-top: 40px;
+}
+.navigation{
+    align-content: center;
+    height: 60px;
+    font-size: xx-large;
+    background-color: lightblue;
+    font-weight: bolder;
+    font-style: italic;
+}
+.info{
+
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.store{
+
+    padding-right: 40px;
+    padding-left: 40px;
+}
+

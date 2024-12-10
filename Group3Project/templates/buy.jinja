@@ -1,0 +1,42 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+Buy - {{ session["player_info"]["current_airport"] }}
+{% endblock %}
+
+{% block content %}
+<table>
+    <h1>Buy</h1>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Buy</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for goods, form in paired_goods_forms %}
+        <form action="{{ url_for('buy') }}" method="POST">
+            <tr>
+                <td>{{ goods["id"] }}</td>
+                <td>{{ goods["name"] }}</td>
+                <td>{{ goods["price"] }}</td>
+                <td>{{ goods["stock"] }}</td>
+                
+                {% if goods["stock"] > 0 %}
+                <td>{{ form.number(min="1", max=goods["stock"]) }}</td>
+                <td>{{ form.goods_id() }}</td>
+                <td>{{ form.submit }}</td>
+                {% else %}
+                <td>Out of stock</td>
+                {% endif %}
+                {{ form.csrf_token }}
+            </tr>
+        </form>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+Store
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to {{ session['player_info']['current_airport'] }} store.</h1>
+
+<a href="{{ url_for('buy') }}"><button>Buy</button></a>
+<a><button>Sell</button></a>
+
+{% endblock %}

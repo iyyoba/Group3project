@@ -1,0 +1,15 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+Home - American Tycoon
+{% endblock %}
+
+{% block content %}
+    <h1>American Tycoon</h1>
+    <div id="btns-wrapper">
+        {% if not session['player_info'] %}
+        <a href="{{ url_for('login') }}"><button>Log In</button></a>
+        <a href="{{ url_for('signup') }}"><button>Sign Up</button></a>
+        {% endif %}
+    </div>  
+{% endblock %}

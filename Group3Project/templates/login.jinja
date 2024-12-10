@@ -1,0 +1,34 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+Log In
+{% endblock%}
+
+{% block content %}
+<h1>Log In</h1>
+<!-- Display Flash Message From Successfully Signed Up -->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <p>{{ messages[0] }}</p>
+    {% endif %}
+{% endwith %}
+<!-- Display Invalid Input message -->
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+<form action="{{ url_for('login') }}" method="POST">
+    <!-- Username Field -->
+    {{ form.username.label }} <br>
+    {{ form.username }}
+    <br><br>
+    <!-- Password Field -->
+    {{ form.password.label }} <br>
+    {{ form.password }}
+    <br><br>
+    <!-- Submit Field -->
+    {{ form.submit }}
+    {{ form.csrf_token }}   
+</form>
+<p>or</p>
+<a class="signup" href="{{ url_for('signup') }}"><button>Sign Up</button></a>
+{% endblock %}
